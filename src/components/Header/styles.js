@@ -60,6 +60,7 @@ export const NavLink = styled(Link)`
 	color: black;
 	font-weight: bold;
 	font-size: 15px;
+	align-self: center;
 	margin: auto 40px;
 `
 
@@ -68,4 +69,14 @@ export const NavigationItemsContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+`
+
+export const DropNavigationItemsContainer = styled.div`
+	position: fixed;
+	left: calc(100% - 67px);
+	top: 45px;
+	display: flex;
+	flex-direction: column;
+	width: 30px;
+	padding: 10px;
 `
