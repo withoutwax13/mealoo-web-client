@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Landing from '../pages/Landing'
-import Meal from '../pages/Meal'
-import PersonalizedMeals from '../pages/PersonalizedMeals'
-import Profile from '../pages/Profile'
+import Landing from '../pages/Landing/index'
+import Meal from '../pages/Meal/index'
+import PersonalizedMeals from '../pages/PersonalizedMeals/index'
+import Profile from '../pages/Profile/index'
 
 // for the mean time the / path directs to Landing page. It will be changed in the future to cater
 // users based on their authorization
