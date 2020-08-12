@@ -1,13 +1,21 @@
 import React from 'react'
 
-import { NavLink } from '../styles'
+import AuthButton from '../../Button/Auth/index'
+
+import { NavLink, NavigationItemsContainer } from '../styles'
 
 export default () => {
 	return (
-		<div>
+		<NavigationItemsContainer>
 			<NavLink to='/help'>Help</NavLink>
-			<NavLink to='/help'>About</NavLink>
-			<NavLink to='/help'>Contact</NavLink>
-		</div>
+			<NavLink to='/about'>About</NavLink>
+			<NavLink to='/contact-us'>Contact</NavLink>
+			<AuthButton 
+				height={30} width={90} 
+				clickCallback={()=>console.log("Join Button clicked!")}
+				customStyle={`margin-left: 40px;`}>
+					<h5>JOIN</h5>
+			</AuthButton>
+		</NavigationItemsContainer>
 	)
 }

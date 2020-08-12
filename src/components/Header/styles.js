@@ -58,5 +58,14 @@ export const NavigationContainer = styled.div`
 
 export const NavLink = styled(Link)`
 	color: black;
-	fontSize: 30px;
+	font-weight: bold;
+	font-size: 15px;
+	margin: auto 40px;
+`
+
+export const NavigationItemsContainer = styled.div`
+	background: transparent;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 `
