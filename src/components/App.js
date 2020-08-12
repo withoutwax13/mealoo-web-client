@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Routes from '../utils/Routes'
+
 export default () => {
 	return (
 		<div>
-			Hello there! This is Mealoo Web App.
+			<Routes/>
 		</div>
 	)
 }
