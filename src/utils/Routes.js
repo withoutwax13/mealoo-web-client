@@ -20,8 +20,8 @@ export default () => {
 						<Route exact path='/' component={Landing}/>
 						<Route exact path='/landing' component={Landing}/>
 						<Route exact path='/set' component={PersonalizedMeals}/>
-						<Route exact path='/users/:userID' component={Profile}/>
-						<Route exact path='/meals/:mealID' component={Meal}/>
+						<Route exact path='/user' component={Profile}/>
+						<Route exact path='/meal' component={Meal}/>
 						<Route component={Landing}/>
 					</Switch>
 				</Integrated>
