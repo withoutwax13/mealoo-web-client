@@ -5,6 +5,9 @@ import Landing from '../pages/Landing/index'
 import Meal from '../pages/Meal/index'
 import PersonalizedMeals from '../pages/PersonalizedMeals/index'
 import Profile from '../pages/Profile/index'
+import About from '../pages/About/index'
+import Contact from '../pages/Contact/index'
+import Help from '../pages/Help/index'
 
 import Integrated from '../components/Integrated/index'
 
@@ -22,6 +25,9 @@ export default () => {
 						<Route exact path='/set' component={PersonalizedMeals}/>
 						<Route exact path='/user' component={Profile}/>
 						<Route exact path='/meal' component={Meal}/>
+						<Route exact path='/about' component={About}/>
+						<Route exact path='/help' component={Help}/>
+						<Route exact path='/contact-us' component={Contact}/>
 						<Route component={Landing}/>
 					</Switch>
 				</Integrated>
