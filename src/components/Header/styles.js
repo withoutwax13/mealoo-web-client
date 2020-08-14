@@ -61,7 +61,29 @@ export const NavLink = styled(Link)`
 	font-weight: bold;
 	font-size: 15px;
 	align-self: center;
-	margin: auto 40px;
+	@media (min-width: 1281px) {
+		margin: auto 40px;
+	}
+
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		margin: auto 40px;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		margin: auto 40px;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+		margin: auto 40px;
+	}
+
+	@media (min-width: 481px) and (max-width: 767px) {
+		margin: 5px auto;
+	}
+
+	@media (min-width: 320px) and (max-width: 480px) {
+		margin: 5px auto;
+	}
 `
 
 export const NavigationItemsContainer = styled.div`
@@ -73,10 +95,14 @@ export const NavigationItemsContainer = styled.div`
 
 export const DropNavigationItemsContainer = styled.div`
 	position: fixed;
-	left: calc(100% - 67px);
-	top: 45px;
+	left: calc(100% - 140px);
+	top: 50px;
 	display: flex;
 	flex-direction: column;
-	width: 30px;
-	padding: 10px;
+	align-items: center;
+	width: 120px;
+	padding: 30px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
 `
