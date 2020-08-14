@@ -20,7 +20,7 @@ export default () => {
 			<NavigationContainer>
 				<Navigation/>
 			</NavigationContainer>
-			{showMobileNav ? <DropNavigation/> : null}
+			{showMobileNav ? <DropNavigation onPress={()=>toggleShowMobileNav(!showMobileNav)}/> : null}
 		</MenuContainer>
 	)
 }
