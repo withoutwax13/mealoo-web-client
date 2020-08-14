@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Header from '../Header/index'
 import Footer from '../Footer/index'
 
-export default (props) => {
+const Integrated = (props) => {
 
 	const { children } = props
 
@@ -15,3 +16,9 @@ export default (props) => {
 		</div>
 	)
 }
+
+Integrated.propTypes = {
+	children: PropTypes.node.isRequired
+}
+
+export default Integrated
