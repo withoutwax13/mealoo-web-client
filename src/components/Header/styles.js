@@ -31,6 +31,7 @@ export const MenuContainer = styled.div`
 export const BurgerMenuContainer = styled.div`
 	margin: 0;
 	padding: 0;
+	cursor: pointer;
 	@media (min-width: 1281px) {
 		display: none; 
 	}
@@ -94,6 +95,13 @@ export const NavigationItemsContainer = styled.div`
 `
 
 export const DropNavigationItemsContainer = styled.div`
+	@media (min-width: 1281px) {
+		display: none;
+	}
+
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		display: none;
+	}
 	position: fixed;
 	left: calc(100% - 140px);
 	top: 50px;
