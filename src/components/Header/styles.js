@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
 	background: transparent;
 	height: 50px;
 	display: flex;
