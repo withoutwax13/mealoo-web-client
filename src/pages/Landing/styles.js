@@ -36,6 +36,7 @@ export const HeroSectionMainContent = styled.div`
 export const HeroSectionMainHeading = styled.h1`
 	color: #f26627ff;
 	font-family: sans serif;
+	letter-spacing: 2px;
 	@media (min-width: 1281px) {
 		font-weight: bold;
 		font-size: 85.33px;
@@ -58,12 +59,12 @@ export const HeroSectionMainHeading = styled.h1`
 
 	@media (min-width: 481px) and (max-width: 767px) {
 		font-weight: bold;
-		font-size: 37.33px;
+		font-size: 40px;
 	}
 
 	@media (min-width: 320px) and (max-width: 480px) {
 		font-weight: bold;
-		font-size: 37.33px;
+		font-size: 40px;
 	}
 `
 export const HeroSectionMainHeadingContainer = styled.div`
@@ -143,7 +144,7 @@ export const HeroSectionSubHeadingContainer = styled.div`
 `
 
 export const HeroSectionActionButtonContainer = styled.div`
-	margin: 30px auto 5px 0;
+	margin: 20px auto 5px 0;
 `
 
 export const HeroSectionImageStyle = styled.div`
