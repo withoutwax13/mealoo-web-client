@@ -147,42 +147,111 @@ export const HeroSectionActionButtonContainer = styled.div`
 	margin: 20px auto 5px 0;
 `
 
-export const HeroSectionImageStyle = styled.div`
-	margin: 80px 0 auto auto;
-	border-top: 1px solid silver;
-	border-left: 1px solid silver;
-	border-bottom: 1px solid silver;
-	border-top-left-radius: 20px;
-	border-bottom-left-radius: 20px;
-	box-shadow: gray 0 0 5px 0;
+export const HeroSectionImageStyleUltraMobileContainer = styled.div`
+	margin: 160px auto auto auto;
 	@media (min-width: 1281px) {
-		width: 600px;
-		height: 300px;
+		display: none;
 	}
 
 	@media (min-width: 1025px) and (max-width: 1280px) {
-		width: 600px;
-		height: 300px;
+		display: none;
 	}
 
 	@media (min-width: 768px) and (max-width: 1024px) {
-		width: 400px;
-		height: 300px;
+		display: none;
 	}
 
 	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-		width: 400px;
-		height: 300px;	
+		display: none;
 	}
 
 	@media (min-width: 481px) and (max-width: 767px) {
-		width: 350px;
-		height: 300px;
+		display: none;
+	}
+`
+export const HeroSectionImageStyleMobileContainer = styled.div`
+	margin: 160px auto auto auto;
+	@media (min-width: 1281px) {
+		display: none;
+	}
+
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		display: none;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		display: none;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+		display: none;
 	}
 
 	@media (min-width: 320px) and (max-width: 480px) {
-		width: 350px;
-		height: 300px;	
+		display: none;	
+	}
+`
+export const HeroSectionImageStyleTabletContainer = styled.div`
+	margin: 160px auto auto auto;
+	@media (min-width: 1281px) {
+		display: none;
+	}
+
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		display: none;
+	}
+
+	@media (min-width: 481px) and (max-width: 767px) {
+		display: none;
+	}
+
+	@media (min-width: 320px) and (max-width: 480px) {
+		display: none;	
+	}
+`
+export const HeroSectionImageStyleDesktopContainer = styled.div`
+	margin: 160px auto auto auto;
+	@media (min-width: 1281px) {
+		display: none;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		display: none;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+		display: none;
+	}
+
+	@media (min-width: 481px) and (max-width: 767px) {
+		display: none;
+	}
+
+	@media (min-width: 320px) and (max-width: 480px) {
+		display: none;	
+	}
+`
+export const HeroSectionImageStyleDesktopHDContainer = styled.div`
+	margin: 160px auto auto auto;
+
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		display: none;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		display: none;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+		display: none;
+	}
+
+	@media (min-width: 481px) and (max-width: 767px) {
+		display: none;
+	}
+
+	@media (min-width: 320px) and (max-width: 480px) {
+		display: none;	
 	}
 `
 

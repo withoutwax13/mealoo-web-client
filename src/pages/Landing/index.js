@@ -14,11 +14,21 @@ import {
 		HeroSectionSubHeading,
 		HeroSectionSubHeadingContainer,
 		HeroSectionActionButtonContainer,
-		HeroSectionImageStyle,
+		HeroSectionImageStyleUltraMobileContainer,
+		HeroSectionImageStyleMobileContainer,
+		HeroSectionImageStyleTabletContainer,
+		HeroSectionImageStyleDesktopContainer,
+		HeroSectionImageStyleDesktopHDContainer,
 		ActionButtonMobileContainer,
 		ActionButtonTabletContainer,
 		ActionButtonDesktopContainer
 	} from './styles'
+
+import MobileUltraImageAsset from '../../assets/Landing/ultra-mobile/1.svg'
+import MobileImageAsset from '../../assets/Landing/mobile/1.svg'
+import TabletImageAsset from '../../assets/Landing/tablet/1.svg'
+import DesktopImageAsset from '../../assets/Landing/desktop/1.svg'
+import DesktopHDImageAsset from '../../assets/Landing/desktophd/1.svg'
 
 export default () => {
 	return (
@@ -53,9 +63,27 @@ export default () => {
 						</ActionButtonDesktopContainer>
 					</HeroSectionActionButtonContainer>
 				</HeroSectionMainContent>
-				<HeroSectionImageStyle>
-					SVG IMAGE ASSET HERE
-				</HeroSectionImageStyle>
+
+				{
+					// not yet done; will be revisited in the future sprints
+				}
+
+				<HeroSectionImageStyleDesktopHDContainer>
+					<DesktopHDImageAsset/>
+				</HeroSectionImageStyleDesktopHDContainer>
+				<HeroSectionImageStyleDesktopContainer>
+					<DesktopImageAsset/>
+				</HeroSectionImageStyleDesktopContainer>
+				<HeroSectionImageStyleTabletContainer>
+					<TabletImageAsset/>
+				</HeroSectionImageStyleTabletContainer>
+				<HeroSectionImageStyleMobileContainer>
+					<MobileImageAsset/>
+				</HeroSectionImageStyleMobileContainer>
+				<HeroSectionImageStyleUltraMobileContainer>
+					<MobileUltraImageAsset/>
+				</HeroSectionImageStyleUltraMobileContainer>
+
 			</HeroSectionContainer>
 			<FeatureCollectionContainer>
 				<FeatureItemContainer>
