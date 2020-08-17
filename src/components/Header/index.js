@@ -27,7 +27,7 @@ const mapStateToProps = ({isLocationLandingPage}) => {
 }
 
 Header.propTypes = {
-	isLocationLandingPage: PropTypes.func.isRequired
+	isLocationLandingPage: PropTypes.bool
 }
 
 export default connect(mapStateToProps)(Header)

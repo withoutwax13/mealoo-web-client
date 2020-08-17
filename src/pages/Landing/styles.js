@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const LandingPageContainer = styled.main`
 	width: 100%;
@@ -147,7 +147,18 @@ export const HeroSectionActionButtonContainer = styled.div`
 	margin: 20px auto 5px 0;
 `
 
+export const HeroSectionImageContainerAnimation = keyframes`
+	0% { margin: 160px auto auto auto; }
+	20% { margin: 140px auto auto auto; }
+	40% { margin: 160px auto auto auto; }
+	60% { margin: 140px auto auto auto; }
+	100% { margin: 160px auto auto auto; }
+`
+
 export const HeroSectionImageStyleUltraMobileContainer = styled.div`
+	animation-name: ${HeroSectionImageContainerAnimation};
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
 	margin: 160px auto auto auto;
 	@media (min-width: 1281px) {
 		display: none;
@@ -170,6 +181,9 @@ export const HeroSectionImageStyleUltraMobileContainer = styled.div`
 	}
 `
 export const HeroSectionImageStyleMobileContainer = styled.div`
+	animation-name: ${HeroSectionImageContainerAnimation};
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
 	margin: 160px auto auto auto;
 	@media (min-width: 1281px) {
 		display: none;
@@ -192,6 +206,9 @@ export const HeroSectionImageStyleMobileContainer = styled.div`
 	}
 `
 export const HeroSectionImageStyleTabletContainer = styled.div`
+	animation-name: ${HeroSectionImageContainerAnimation};
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
 	margin: 160px auto auto auto;
 	@media (min-width: 1281px) {
 		display: none;
@@ -210,6 +227,9 @@ export const HeroSectionImageStyleTabletContainer = styled.div`
 	}
 `
 export const HeroSectionImageStyleDesktopContainer = styled.div`
+	animation-name: ${HeroSectionImageContainerAnimation};
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
 	margin: 160px auto auto auto;
 	@media (min-width: 1281px) {
 		display: none;
@@ -232,6 +252,9 @@ export const HeroSectionImageStyleDesktopContainer = styled.div`
 	}
 `
 export const HeroSectionImageStyleDesktopHDContainer = styled.div`
+	animation-name: ${HeroSectionImageContainerAnimation};
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
 	margin: 160px auto auto auto;
 
 	@media (min-width: 1025px) and (max-width: 1280px) {
