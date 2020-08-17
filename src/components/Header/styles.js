@@ -2,10 +2,16 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const HeaderContainer = styled.header`
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+	${(props)=>{
+		if(props.isLocationLandingPage){
+			return `
+					position: fixed;
+					top: 0;
+					left: 0;
+					right: 0;
+				`
+		}
+	}}
 	background-color: white;
 	height: 50px;
 	display: flex;

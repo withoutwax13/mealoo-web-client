@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import AuthButton from '../../components/Button/Auth/index'
+
+import { checkIsCurrentLandingPage } from '../../modules/actions'
 
 import {
 		LandingPageContainer, 
@@ -30,7 +34,15 @@ import TabletImageAsset from '../../assets/Landing/tablet/1.svg'
 import DesktopImageAsset from '../../assets/Landing/desktop/1.svg'
 import DesktopHDImageAsset from '../../assets/Landing/desktophd/1.svg'
 
-export default () => {
+const Landing = ({checkIsCurrentLandingPage}) => {
+
+	useEffect(()=>{
+		checkIsCurrentLandingPage(true)
+		return () => {
+			checkIsCurrentLandingPage(false)
+		}
+	}, [])
+	
 	return (
 		<LandingPageContainer>
 			<HeroSectionContainer>
@@ -102,3 +114,9 @@ export default () => {
 		</LandingPageContainer>
 	)
 }
+
+Landing.propTypes = {
+	checkIsCurrentLandingPage: PropTypes.func.isRequired
+}
+
+export default connect(null, { checkIsCurrentLandingPage })(Landing)

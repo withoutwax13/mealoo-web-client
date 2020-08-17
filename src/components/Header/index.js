@@ -1,13 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import Menu from './Menu/index'
 import { HeaderContainer, LogoContainer, RightHeaderContainer } from './styles'
 
 import MealooLogo from '../../assets/mealoo-logo.svg'
 
-export default () => {
+const Header = ({isLocationLandingPage}) => {
 	return (
-		<HeaderContainer>
+		<HeaderContainer isLocationLandingPage={isLocationLandingPage}>
 			<LogoContainer>
 				<MealooLogo/>
 			</LogoContainer>
@@ -17,3 +19,15 @@ export default () => {
 		</HeaderContainer>
 	)
 }
+
+const mapStateToProps = ({isLocationLandingPage}) => {
+	return {
+		isLocationLandingPage: isLocationLandingPage
+	}
+}
+
+Header.propTypes = {
+	isLocationLandingPage: PropTypes.func.isRequired
+}
+
+export default connect(mapStateToProps)(Header)
