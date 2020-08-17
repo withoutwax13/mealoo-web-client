@@ -29,7 +29,7 @@ export const ProductTrialContainer = styled.div`
 export const HeroSectionMainContent = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-top: 40px;
+	margin-top: 80px;
 	margin-left: 10%;
 `
 
