@@ -5,7 +5,7 @@ export const LandingPageContainer = styled.main`
 `
 
 export const HeroSectionContainer = styled.div`
-	height: 500px;
+	height: 600px;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -14,11 +14,14 @@ export const HeroSectionContainer = styled.div`
 
 export const FeatureCollectionContainer = styled.div`
 	width: 100%;
+	background-color: #9bd7d1ff;
 `
 
 export const FeatureItemContainer = styled.div`
-	height: 500px;
+	height: 700px;
 	width: 100%;
+	display: flex;
+	flex-direction: row;
 `
 
 export const ProductTrialContainer = styled.div`
@@ -327,4 +330,29 @@ export const ActionButtonDesktopContainer = styled.div`
 	@media (min-width: 320px) and (max-width: 480px) {
 		display: none;
 	}
+`
+
+export const FeatureItemMainLabelContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin: 150px auto auto 50px;
+`
+export const FeatureItemMainLabel = styled.h2`
+	font-family: Helvetiva;
+	color: black;
+	font-size: 25px;
+	font-weight: bold;
+`
+
+export const FeatureItemDetailsContainer = styled.h3`
+	
+`
+export const FeatureItemDetails = styled.div`
+	font-family: Calibri;
+	color: gray;
+	font-weight: bold;
+`
+
+export const FeatureItemImageAssetContainer = styled.div`
+	margin: 50px auto 50px 100px;
 `
