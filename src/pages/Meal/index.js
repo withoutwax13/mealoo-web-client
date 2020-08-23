@@ -1,9 +1,17 @@
 import React from 'react'
 
-export default () => {
+import Content from './Content/index'
+import Head from './Head/index'
+
+import { PageContainer } from './style'
+
+const Meal = (props) => {
 	return (
-		<div>
-			Meal Page
-		</div>
+		<PageContainer>
+			<Head/>
+			<Content/>
+		</PageContainer>
 	)
 }
+
+export default Meal
