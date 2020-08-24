@@ -8,8 +8,8 @@ import ProfileAsset from '../../../../assets/Meal/profile.svg'
 const NavPanel = () => {
 	return (
 		<Container>
-			<GoBackAsset style={{cursor: 'pointer'}}/>
-			<ProfileAsset style={{cursor: 'pointer'}}/>
+			<GoBackAsset style={{cursor: 'pointer'}} width={25}/>
+			<ProfileAsset style={{cursor: 'pointer'}} width={25}/>
 		</Container>
 	)
 }
