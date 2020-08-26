@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Container, ImageContainer, LabelContainer, LabelText } from './style'
+import AddMeal from '../../../../components/Button/AddMeal/index'
+import { Container, ImageContainer, ActionContainer, LabelContainer, LabelText } from './style'
 
 const MealIdentity = (props) => {
 
@@ -12,11 +13,14 @@ const MealIdentity = (props) => {
 			<ImageContainer>
 				{/*Image File as component here [passed by the mealImage prop]*/}
 			</ImageContainer>
-			<LabelContainer>
-				<LabelText>
-					{mealLabel}
-				</LabelText>
-			</LabelContainer>
+			<ActionContainer>
+				<LabelContainer>
+					<LabelText>
+						{mealLabel}
+					</LabelText>
+				</LabelContainer>
+				<AddMeal/>
+			</ActionContainer>
 		</Container>
 	)
 }

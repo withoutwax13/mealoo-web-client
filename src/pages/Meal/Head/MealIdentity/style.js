@@ -45,6 +45,12 @@ export const ImageContainer = styled.div`
 	border: 1px solid black;
 	background-color: white;
 `
+export const ActionContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+`
+
 export const LabelContainer = styled.div`
 	overflow-wrap: break-word;
 	text-align: center;
