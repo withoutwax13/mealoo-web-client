@@ -1,22 +1,26 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 
-import { Container } from './style'
+import Ingredient from './Ingredient/index'
+import Nutrition from './Nutrition/index'
+import Price from './Price/index'
+import Recipe from './Recipe/index'
+
+import { Container, LeftSection, RightSection } from './style'
 
 const Content = (props) => {
 
-	const { recipeData, nutritionalData } = props
-
 	return (
 		<Container>
-			Content
+			<LeftSection>
+				<Nutrition/>
+				<Price/>
+			</LeftSection>
+			<RightSection>
+				<Ingredient/>
+				<Recipe/>
+			</RightSection>
 		</Container>
 	)
-}
-
-Content.propTypes = {
-	recipeData: PropTypes.object,
-	nutritionalData: PropTypes.array
 }
 
 export default Content

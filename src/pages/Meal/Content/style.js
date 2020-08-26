@@ -31,3 +31,13 @@ export const Container = styled.div`
 		flex-direction: column;
 	}
 `
+
+export const LeftSection = styled.div`
+	display: flex;
+	flex-direction: column;
+`
+
+export const RightSection = styled.div`
+	display: flex;
+	flex-direction: column;
+`
