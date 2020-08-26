@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import Body from './Body/index'
-
 import { Container } from './style'
 
 const Content = (props) => {
@@ -11,7 +9,7 @@ const Content = (props) => {
 
 	return (
 		<Container>
-			<Body recipeData={recipeData} nutritionalData={nutritionalData}/>
+			Content
 		</Container>
 	)
 }

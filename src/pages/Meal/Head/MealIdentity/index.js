@@ -16,7 +16,7 @@ const MealIdentity = (props) => {
 			<ActionContainer>
 				<LabelContainer>
 					<LabelText>
-						Adobong Manok sa Miso
+						{mealLabel}
 					</LabelText>
 				</LabelContainer>
 				<AddMeal/>
