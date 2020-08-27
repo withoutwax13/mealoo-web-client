@@ -28,9 +28,9 @@ const Price = (props) => {
     return (
         <Container>
             <SectionTitle>Price Breakdown</SectionTitle>
-            {breakdown.map(d=>{
+            {breakdown.map((d, index)=>{
                 return (
-                    <ProductItem key={d.id}>
+                    <ProductItem key={index}>
                         <Label>
                             {d.name}
                         </Label>
