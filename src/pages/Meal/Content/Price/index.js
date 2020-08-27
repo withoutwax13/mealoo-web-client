@@ -1,21 +1,54 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Container } from './style'
+import { 
+    Container,
+    SectionTitle,
+    ProductItem,
+    Label,
+    PriceLabel
+ } from './style'
 
 const Price = (props) => {
 
-    const { total, breakdown } = props
+    const {
+            breakdown = [
+                {
+                    name: 'Product 1', price: 12
+                },
+                {
+                    name: 'Product 2', price: 20
+                },
+                {
+                    name: 'Product 3', price: 12
+                }
+            ]
+        } = props, total = breakdown.map(d=>d.price).reduce((a, b)=>a + b)
 
     return (
         <Container>
-            Price
+            <SectionTitle>Price Breakdown</SectionTitle>
+            {breakdown.map(d=>{
+                return (
+                    <ProductItem key={d.id}>
+                        <Label>
+                            {d.name}
+                        </Label>
+                        <PriceLabel>
+                            {d.price}
+                        </PriceLabel>
+                    </ProductItem>
+                )
+            })}
+            <ProductItem>
+                <Label>Total</Label>
+                <PriceLabel total={true}>{total}</PriceLabel>
+            </ProductItem>
         </Container>
     )
 }
 
 Price.propTypes = {
-    total: PropTypes.number,
     breakdown: PropTypes.array
 }
 
