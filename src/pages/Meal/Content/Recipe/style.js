@@ -29,6 +29,7 @@ export const Container = styled.div`
 	@media (min-width: 320px) and (max-width: 480px) {
         width: 90vw;
     }
+    margin: 10px auto;
 `
 
 export const SectionTitle = styled.div`

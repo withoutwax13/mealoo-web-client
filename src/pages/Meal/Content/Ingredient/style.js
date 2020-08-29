@@ -39,6 +39,7 @@ export const Container = styled.div`
         flex-direction: column;
         width: 90vw;
     }
+    margin: 10px auto;
 `
 export const SectionTitle = styled.div`
     color: black;
