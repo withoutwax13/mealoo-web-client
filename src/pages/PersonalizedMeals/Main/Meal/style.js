@@ -8,20 +8,16 @@ export const Container = styled.div`
 `
 export const MealTitle = styled.div`
     font-family: Monospace;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    margin: 0 auto 10px 30px;
+    margin: 10px auto;
+    cursor: pointer;
 `
 export const ImageContainer = styled.div`
     border: 1px solid silver;
     border-radius: 10px;
     width: 300px;
     height: 250px;
-    @media (min-width: 481px) and (max-width: 767px) {
-        margin: 0 auto;
-    }
-
-    @media (min-width: 320px) and (max-width: 480px) {
-        margin: 0 auto;
-    }
+    margin: 0 auto;
+    cursor: pointer;
 `
