@@ -7,6 +7,17 @@ const isLocationLandingPage_Reducer = (state = null, action) => {
 	return state
 }
 
+const selectedMeal_Reducer = { state = { mealName: '', mealData: {} }, action } => {
+	if(action.type === 'SELECT_MEAL'){
+		return {
+			mealName: action.payload.mealName,
+			mealData: action.payload.mealData
+		}
+	}
+	return state
+}
+
 export default combineReducers({
-	isLocationLandingPage: isLocationLandingPage_Reducer
+	isLocationLandingPage: isLocationLandingPage_Reducer,
+	selectedMeal: selectedMeal_Reducer
 })
