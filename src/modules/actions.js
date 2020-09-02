@@ -9,9 +9,9 @@ export const checkIsCurrentLandingPage = (status) => {
 
 export const selectMeal = (mealName) => async dispatch => {
 	await API
-			.get('/meal')
+			.get(`meal/${mealName.split(' ').join('')}`)
 			.then(res=>{
-				let mealData = res.data.filter(d=>d.name === mealName.split(' ').join(''))
-				dispatch({ mealName: mealName, mealData: mealData})
+				dispatch({ mealName: mealName, mealData: res.data})
 			})
+			.catch(e=>console.log(e))
 }
