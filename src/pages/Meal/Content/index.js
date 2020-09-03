@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Ingredient from './Ingredient/index'
 import Nutrition from './Nutrition/index'
@@ -9,18 +10,46 @@ import { Container, LeftSection, RightSection } from './style'
 
 const Content = (props) => {
 
-	return (
-		<Container>
-			<LeftSection>
-				<Nutrition/>
-				<Price/>
-			</LeftSection>
-			<RightSection>
-				<Ingredient/>
-				<Recipe/>
-			</RightSection>
-		</Container>
-	)
+	const { mealData } = props
+
+	if(mealData){
+		return (
+			<Container>
+				<LeftSection>
+					<Nutrition 
+						calories={mealData.totalCalories} 
+						macronutrients={{
+							carbohydrates: mealData.mealMacronutrients.totalCarbohydrates,
+							proteins: mealData.mealMacronutrients.totalProteins,
+							fats: mealData.mealMacronutrients.totalFats
+						}}
+					/>
+					<Price 
+						breakdown={
+							mealData.ingredients ?
+							mealData.ingredients.map(d=>{
+								return {
+									name: d.product.name, 
+									price: d.product.price
+								}
+							}) :
+							mealData.ingredients
+						}
+					/>
+				</LeftSection>
+				<RightSection>
+					<Ingredient ingredientData={mealData.ingredients}/>
+					<Recipe recipeData={mealData.recipe}/>
+				</RightSection>
+			</Container>
+		)
+	} else {
+		return <h2>Loading</h2>
+	}
+}
+
+Content.propTypes = {
+	mealData: PropTypes.object
 }
 
 export default Content

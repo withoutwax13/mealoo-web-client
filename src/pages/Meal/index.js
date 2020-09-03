@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+
+{/*This is only included to be part of the 'look' test and will not be a part of the real app logic*/}
+import { selectMeal } from '../../modules/actions'
 
 import Content from './Content/index'
 import Head from './Head/index'
@@ -6,12 +10,33 @@ import Head from './Head/index'
 import { PageContainer } from './style'
 
 const Meal = (props) => {
-	return (
-		<PageContainer>
-			<Head/>
-			<Content/>
-		</PageContainer>
-	)
+
+	const { mealName, mealData, selectMeal } = props
+
+	{/* For ui testing only, not the actual logic and argument passed to selectMeal action [yet the same process] */}
+	useEffect(()=>{
+		selectMeal('Milk And Strawberry')
+	}, [])
+
+	if(mealData){
+		return (
+			<PageContainer>
+				<Head mealName={mealName}/>
+				<Content mealData={mealData}/>
+			</PageContainer>
+		)
+	}else{
+		return <h2>Loading</h2>
+	}
 }
 
-export default Meal
+
+
+const mapStateToProps = ({ selectedMeal }) => {
+	return {
+		mealName: selectedMeal.mealName,
+		mealData: selectedMeal.mealData
+	}
+}
+
+export default connect(mapStateToProps, { selectMeal })(Meal)

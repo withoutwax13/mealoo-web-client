@@ -24,7 +24,7 @@ const Recipe = (props) => {
     const renderRecipe = () => {
         return (
             <RecipeContainer>
-                {recipeData.map((item, index)=><RecipeItem key={index}>{item}</RecipeItem>)}
+                {recipeData ? recipeData.map((item, index)=><RecipeItem key={index}>{item}</RecipeItem>) : `No recipe available.`}
             </RecipeContainer>
         )
     }
