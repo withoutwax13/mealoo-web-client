@@ -11,7 +11,7 @@ export const selectMeal = (mealName) => async dispatch => {
 	await API
 			.get(`meal/${mealName.split(' ').join('')}`)
 			.then(res=>{
-				dispatch({ mealName: mealName, mealData: res.data})
+				dispatch({ type: 'SELECT_MEAL', payload: { mealName: mealName, mealData: res.data } })
 			})
 			.catch(e=>console.log(e))
 }
