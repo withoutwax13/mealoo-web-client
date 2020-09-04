@@ -110,15 +110,21 @@ export const LabelContainer = styled.div`
 		display: flex;
 		justify-content: center;
 		width: 300px;
+		margin-bottom: 20px;
+		margin-top: 20px;
 	}
 
 	@media (min-width: 320px) and (max-width: 480px) {
 		display: flex;
 		justify-content: center;
 		width: 300px;
+		margin-bottom: 20px;
+		margin-top: 20px;
 	}
 `
 
 export const LabelText = styled.h1`
 	font-weight: bold;
+	letter-spacing: 3px;
+	font-family: Helvetica;
 `
