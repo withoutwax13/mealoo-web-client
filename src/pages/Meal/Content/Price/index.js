@@ -41,7 +41,7 @@ const Price = (props) => {
                 )
             })}
             <ProductItem>
-                <Label>Total</Label>
+                <Label total={true}>Total</Label>
                 <PriceLabel total={true}>{total}</PriceLabel>
             </ProductItem>
         </Container>

@@ -7,7 +7,7 @@ export const Container = styled.div`
     border-radius: 10px;
     padding: 15px;
     @media (min-width: 1281px) {
-		width: 35vw;
+		width: 450px;
 	}
 
 	@media (min-width: 1025px) and (max-width: 1280px) {
@@ -44,12 +44,13 @@ export const ProductItem = styled.div`
     margin: 5px 0;
 `
 export const Label = styled.div`
-    font-family: Monospace;
-    font-size: 16px;
+    font-family: ${(props)=>props.total === true ? `Courier New` : `Monospace`};
+    font-size: ${(props)=>props.total === true ? `18px` : `16px`};
     font-weight: bold;
+    color: ${(props)=>props.total === true ? `black` : `red`};
 `
 export const PriceLabel = styled.div`
-    font-family: Monospace;
-    font-size: 16px;
-    font-weight: ${(props)=>props.total === true ? `bold` : `normal`};
+    font-family: ${(props)=>props.total === true ? `Courier New` : `Monospace`};
+    font-size: ${(props)=>props.total === true ? `18px` : `16px`};
+    font-weight: bold;
 `
