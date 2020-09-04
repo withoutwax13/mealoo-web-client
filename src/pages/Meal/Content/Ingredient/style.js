@@ -47,6 +47,13 @@ export const SectionTitle = styled.div`
     font-family: Courier New;
     font-weight: bold;
     margin: 5px;
+    @media (min-width: 481px) and (max-width: 767px) {
+        margin-bottom: 15px;
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        margin-bottom: 15px;
+    }
 `
 export const ProductsContainer = styled.div`
     display: flex;
