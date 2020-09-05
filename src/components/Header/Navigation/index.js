@@ -1,10 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import AuthButton from '../../Button/Auth/index'
 
 import { NavLink, NavigationItemsContainer } from '../styles'
 
-export default () => {
+import { clientLogIn, clientLogOut } from '../../../modules/actions'
+
+const Navigation = (props) => {
+
+	const { isClientHasAuth, clientLogIn, clientLogOut } = props
+
 	return (
 		<NavigationItemsContainer>
 			<NavLink to='/help'>Help</NavLink>
@@ -12,10 +19,22 @@ export default () => {
 			<NavLink to='/contact-us'>Contact</NavLink>
 			<AuthButton 
 				height={30} width={90} 
-				clickCallback={()=>console.log("Join Button clicked!")}
-				customStyle={`margin-left: 40px;`}>
-					<h5>JOIN</h5>
-			</AuthButton>
+				clickCallback={isClientHasAuth ? clientLogOut : clientLogIn}
+				customStyle={`margin-left: 40px;`}/>
 		</NavigationItemsContainer>
 	)
 }
+
+Navigation.propTypes = {
+	isClientHasAuth: PropTypes.bool,
+	clientLogIn: PropTypes.func.isRequired,
+	clientLogOut: PropTypes.func.isRequired
+}
+
+const mapStateToProps = ({ isClientHasAuth }) => {
+	return {
+		isClientHasAuth
+	}
+}
+
+export default connect(mapStateToProps, { clientLogIn, clientLogOut })(Navigation)
