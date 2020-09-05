@@ -15,3 +15,11 @@ export const selectMeal = (mealName) => async dispatch => {
 			})
 			.catch(e=>console.log(e))
 }
+
+export const clientLogIn = () => {
+	return { type: 'CLIENT_LOG_IN' }
+}
+
+export const clientLogOut = () => {
+	return { type: 'CLIENT_LOG_OUT' }
+}

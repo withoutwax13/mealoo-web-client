@@ -17,7 +17,19 @@ const selectedMeal_Reducer = (state = { mealName: '', mealData: null }, action) 
 	return state
 }
 
+const isClientHasAuth_Reducer = (state = false, action) => {
+	switch(action.type){
+		case 'CLIENT_LOG_IN':
+			return true
+		case 'CLIENT_LOG_OUT':
+			return false
+		default:
+			return false
+	}
+}
+
 export default combineReducers({
 	isLocationLandingPage: isLocationLandingPage_Reducer,
-	selectedMeal: selectedMeal_Reducer
+	selectedMeal: selectedMeal_Reducer,
+	isClientHasAuth: isClientHasAuth_Reducer
 })
