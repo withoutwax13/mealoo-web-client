@@ -8,34 +8,40 @@ import Content from './Content/index'
 import Head from './Head/index'
 
 import { PageContainer } from './style'
+import NoAccess from '../NoAccess/index'
 
 const Meal = (props) => {
 
-	const { mealName, mealData, selectMeal } = props
+	const { mealName, mealData, selectMeal, isClientHasAuth } = props
 
 	{/* For ui testing only, not the actual logic and argument passed to selectMeal action [yet the same process] */}
 	useEffect(()=>{
 		selectMeal('Milk And Strawberry')
 	}, [])
 
-	if(mealData){
-		return (
-			<PageContainer>
-				<Head mealName={mealName}/>
-				<Content mealData={mealData}/>
-			</PageContainer>
-		)
+	if(isClientHasAuth){
+		if(mealData){
+			return (
+				<PageContainer>
+					<Head mealName={mealName}/>
+					<Content mealData={mealData}/>
+				</PageContainer>
+			)
+		}else{
+			return <h2>Loading</h2>
+		}
 	}else{
-		return <h2>Loading</h2>
+		return <NoAccess/>
 	}
 }
 
 
 
-const mapStateToProps = ({ selectedMeal }) => {
+const mapStateToProps = ({ selectedMeal, isClientHasAuth }) => {
 	return {
 		mealName: selectedMeal.mealName,
-		mealData: selectedMeal.mealData
+		mealData: selectedMeal.mealData,
+		isClientHasAuth: isClientHasAuth
 	}
 }
 
