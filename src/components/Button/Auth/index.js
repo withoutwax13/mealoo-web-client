@@ -5,14 +5,24 @@ import { connect } from 'react-redux'
 import { Button } from './style'
 
 const AuthButton = (props) => {
-	const { height, size, width, clickCallback, customStyle, isClientHasAuth } = props
+	
+	const { childrenNode, height, size, width, clickCallback, customStyle, isClientHasAuth } = props
+	
+	const renderChildren = () => {
+		if(childrenNode){
+			return childrenNode
+		}else{
+			return isClientHasAuth ? <h5>LOGOUT</h5> : <h5>JOIN</h5>
+		}
+	}
+	
 	return (
 		<Button 
 			width={width} 
 			height={height} 
 			onClick={clickCallback}
 			customStyle={customStyle}>
-				{isClientHasAuth ? <h5>LOGOUT</h5> : <h5>JOIN</h5>}
+				{renderChildren()}
 		</Button>
 	)
 }
@@ -22,7 +32,8 @@ AuthButton.propTypes = {
 	width: PropTypes.number.isRequired,
 	clickCallback: PropTypes.func,
 	customStyle: PropTypes.string,
-	isClientHasAuth: PropTypes.any
+	isClientHasAuth: PropTypes.any,
+	childrenNode: PropTypes.node
 }
 
 const mapStateToProps = ({ isClientHasAuth }) => {
