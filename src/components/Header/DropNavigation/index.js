@@ -1,13 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux' 
 import PropTypes from 'prop-types'
 
 import AuthButton from '../../Button/Auth/index'
 
 import { NavLink, DropNavigationItemsContainer } from '../styles'
 
+import { clientLogIn, clientLogOut } from '../../../modules/actions'
+
 const DropNavigation = (props) => {
 
-	const { onPress } = props
+	const { onPress, clientLogOut, clientLogIn, isClientHasAuth } = props
 
 	return (
 		<DropNavigationItemsContainer>
@@ -18,17 +21,25 @@ const DropNavigation = (props) => {
 				height={30} width={90} 
 				clickCallback={()=>{
 					onPress()
-					console.log("Join Button clicked!")
+					isClientHasAuth ? clientLogOut() : clientLogIn()
 				}}
-				customStyle={`margin-left: 0; align-self: center;`}>
-					<h5>JOIN</h5>
-			</AuthButton>
+				customStyle={`margin-left: 0; align-self: center;`}
+				childrenNode={<h5>{isClientHasAuth ? `LOGOUT` : `JOIN`}</h5>}/>
 		</DropNavigationItemsContainer>
 	)
 }
 
 DropNavigation.propTypes = {
-	onPress: PropTypes.func.isRequired
+	onPress: PropTypes.func.isRequired,
+	isClientHasAuth: PropTypes.bool,
+	clientLogIn: PropTypes.func.isRequired,
+	clientLogOut: PropTypes.func.isRequired
 }
 
-export default DropNavigation
+const mapStateToProps = ({ isClientHasAuth }) => {
+	return {
+		isClientHasAuth
+	}
+}
+
+export default connect(mapStateToProps, { clientLogIn, clientLogOut })(DropNavigation)
