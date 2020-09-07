@@ -1,5 +1,7 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Router, Switch, Route } from 'react-router-dom'
+
+import History from './History'
 
 import Landing from '../pages/Landing/index'
 import Meal from '../pages/Meal/index'
@@ -17,7 +19,7 @@ import Integrated from '../components/Integrated/index'
 export default () => {
 	return (
 		<div>
-			<BrowserRouter>
+			<Router history={History}>
 				<Integrated>
 					<Switch>
 						<Route exact path='/' component={Landing}/>
@@ -31,7 +33,7 @@ export default () => {
 						<Route component={Landing}/>
 					</Switch>
 				</Integrated>
-			</BrowserRouter>
+			</Router>
 		</div>
 	)
 }
