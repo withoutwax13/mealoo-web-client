@@ -1,5 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+import History from '../../../../utils/History'
+
+import { selectMeal } from '../../../../modules/actions'
 
 import {
     Container,
@@ -10,17 +15,24 @@ import {
 const Meal = (props) => {
 
     const { name, image } = props.mealData
+    const { selectMeal } = props
+
+    const pressSelectMeal = () => {
+        selectMeal(name)
+        History.push('/meal')
+    }
 
     return (
         <Container>
-            <MealTitle>{name}</MealTitle>
-            <ImageContainer>{image ? image : ``}</ImageContainer>
+            <MealTitle onClick={pressSelectMeal}>{name}</MealTitle>
+            <ImageContainer onClick={pressSelectMeal}>{image ? image : ``}</ImageContainer>
         </Container>
     )
 }
 
 Meal.propTypes = {
-    mealData: PropTypes.object
+    mealData: PropTypes.object,
+    selectMeal: PropTypes.func
 }
 
-export default Meal
+export default connect(null, { selectMeal })(Meal)

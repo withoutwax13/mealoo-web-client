@@ -9,11 +9,13 @@ import {
 
 const Main = (props) => {
 
+
+    {/* Test data for the meantime */}
     const {
         setData = [
-            { name: 'Meal 1', image: null},
-            { name: 'Meal 2', image: null},
-            { name: 'Meal 3', image: null}
+            { name: 'PastaAndChicken', image: null},
+            { name: 'MilkAndStrawberry', image: null},
+            { name: 'OnlyBeef', image: null}
         ]
     } = props
 

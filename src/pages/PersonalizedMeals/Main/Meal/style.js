@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 `
 export const MealTitle = styled.div`
     font-family: Monospace;
@@ -16,8 +16,8 @@ export const MealTitle = styled.div`
 export const ImageContainer = styled.div`
     border: 1px solid silver;
     border-radius: 10px;
-    width: 300px;
-    height: 250px;
+    width: 30vw;
+    height: 30vw;
     margin: 0 auto;
     cursor: pointer;
 `
