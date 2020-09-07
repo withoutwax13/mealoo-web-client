@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-{/*This is only included to be part of the 'look' test and will not be a part of the real app logic*/}
-import { selectMeal } from '../../modules/actions'
-
 import Content from './Content/index'
 import Head from './Head/index'
 
@@ -12,12 +9,7 @@ import NoAccess from '../NoAccess/index'
 
 const Meal = (props) => {
 
-	const { mealName, mealData, selectMeal, isClientHasAuth } = props
-
-	{/* For ui testing only, not the actual logic and argument passed to selectMeal action [yet the same process] */}
-	useEffect(()=>{
-		selectMeal('Milk And Strawberry')
-	}, [])
+	const { mealName, mealData, isClientHasAuth } = props
 
 	if(isClientHasAuth){
 		if(mealData){
@@ -45,4 +37,4 @@ const mapStateToProps = ({ selectedMeal, isClientHasAuth }) => {
 	}
 }
 
-export default connect(mapStateToProps, { selectMeal })(Meal)
+export default connect(mapStateToProps)(Meal)
