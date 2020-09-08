@@ -11,19 +11,17 @@ const Main = (props) => {
 
 
     {/* Test data for the meantime */}
-    const {
-        setData = [
-            { name: 'PastaAndChicken', image: null},
-            { name: 'MilkAndStrawberry', image: null},
-            { name: 'OnlyBeef', image: null}
-        ]
-    } = props
+    const { setData } = props
 
-    return (
-        <Container>
-            {setData.map((meal, index)=><Meal key={index} mealData={meal}/>)}
-        </Container>
-    )
+    if(setData){
+        return (
+            <Container>
+                {setData.map((meal, index)=><Meal key={index} mealData={meal}/>)}
+            </Container>
+        )
+    }else{
+        return <h1>Loading</h1>
+    }
 }
 
 Main.propTypes = {
