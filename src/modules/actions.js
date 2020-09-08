@@ -16,6 +16,10 @@ export const selectMeal = (mealName) => async dispatch => {
 			.catch(e=>console.log(e))
 }
 
+export const clearMealSelection = () => {
+	return { type: 'CLEAR_MEAL_SELECTION' }
+}
+
 export const clientLogIn = () => {
 	return { type: 'CLIENT_LOG_IN' }
 }

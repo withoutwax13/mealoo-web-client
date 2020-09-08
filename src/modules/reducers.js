@@ -14,6 +14,9 @@ const selectedMeal_Reducer = (state = { mealName: '', mealData: null }, action) 
 			mealData: action.payload.mealData
 		}
 	}
+	else if(action.type === 'CLEAR_MEAL_SELECTION'){
+		return { mealName: '', mealData: null }
+	}
 	return state
 }
 
