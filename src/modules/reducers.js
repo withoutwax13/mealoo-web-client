@@ -17,6 +17,20 @@ const selectedMeal_Reducer = (state = { mealName: '', mealData: null }, action) 
 	return state
 }
 
+const suggestedMealSet_Reducer = (state = [], action) => {
+	if(action.type === 'FETCH_SET'){
+
+		{/* Fetch the suggested meal set from server */}
+		{/* For the meantime, dummy suggestion data */}
+		return [
+            { name: 'PastaAndChicken', image: null},
+            { name: 'MilkAndStrawberry', image: null},
+            { name: 'OnlyBeef', image: null}
+        ]
+	}
+	return state
+}
+
 const isClientHasAuth_Reducer = (state = false, action) => {
 	switch(action.type){
 		case 'CLIENT_LOG_IN':
@@ -31,5 +45,6 @@ const isClientHasAuth_Reducer = (state = false, action) => {
 export default combineReducers({
 	isLocationLandingPage: isLocationLandingPage_Reducer,
 	selectedMeal: selectedMeal_Reducer,
-	isClientHasAuth: isClientHasAuth_Reducer
+	isClientHasAuth: isClientHasAuth_Reducer,
+	suggestedMealSet: suggestedMealSet_Reducer
 })

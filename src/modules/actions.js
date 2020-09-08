@@ -23,3 +23,7 @@ export const clientLogIn = () => {
 export const clientLogOut = () => {
 	return { type: 'CLIENT_LOG_OUT' }
 }
+
+export const fetchSuggestedMealSet = () => {
+	return { type: 'FETCH_SET' }
+}
