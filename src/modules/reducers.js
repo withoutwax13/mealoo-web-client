@@ -24,7 +24,7 @@ const isClientHasAuth_Reducer = (state = false, action) => {
 		case 'CLIENT_LOG_OUT':
 			return false
 		default:
-			return false
+			return state
 	}
 }
 
