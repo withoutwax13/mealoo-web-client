@@ -7,15 +7,25 @@ const isLocationLandingPage_Reducer = (state = null, action) => {
 	return state
 }
 
-const selectedMeal_Reducer = (state = { mealName: '', mealData: null }, action) => {
+const selectedMeal_Reducer = (state = { mealName: '', mealData: null, isFetching: false }, action) => {
 	if(action.type === 'SELECT_MEAL'){
 		return {
 			mealName: action.payload.mealName,
-			mealData: action.payload.mealData
+			mealData: action.payload.mealData,
+			isFetching: true
 		}
 	}
 	else if(action.type === 'CLEAR_MEAL_SELECTION'){
-		return { mealName: '', mealData: null }
+		return { mealName: '', mealData: null, isFetching: false }
+	}
+	return state
+}
+
+const isFetchingMeal_Reducer = (state = false, action) => {
+	if(action.type === 'TOGGLE_MEAL_FETCH_ON'){
+		return true
+	}else if(action.type === 'TOGGLE_MEAL_FETCH_OFF'){
+		return false
 	}
 	return state
 }
@@ -49,5 +59,6 @@ export default combineReducers({
 	isLocationLandingPage: isLocationLandingPage_Reducer,
 	selectedMeal: selectedMeal_Reducer,
 	isClientHasAuth: isClientHasAuth_Reducer,
-	suggestedMealSet: suggestedMealSet_Reducer
+	suggestedMealSet: suggestedMealSet_Reducer,
+	isFetchingMeal: isFetchingMeal_Reducer
 })

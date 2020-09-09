@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 
 import History from '../../../../utils/History'
 
-import { selectMeal } from '../../../../modules/actions'
+import { selectMeal, toggleMealFetch } from '../../../../modules/actions'
 
 import {
     Container,
@@ -16,10 +16,11 @@ import {
 const Meal = (props) => {
 
     const { name, image } = props.mealData
-    const { selectMeal } = props
+    const { selectMeal, toggleMealFetch } = props
 
     const pressSelectMeal = () => {
         selectMeal(name)
+        toggleMealFetch(true)
         History.push('/meal')
     }
 
@@ -33,7 +34,8 @@ const Meal = (props) => {
 
 Meal.propTypes = {
     mealData: PropTypes.object,
-    selectMeal: PropTypes.func
+    selectMeal: PropTypes.func,
+    toggleMealFetch: PropTypes.func
 }
 
-export default connect(null, { selectMeal })(Meal)
+export default connect(null, { selectMeal, toggleMealFetch })(Meal)

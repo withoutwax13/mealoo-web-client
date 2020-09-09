@@ -20,6 +20,12 @@ export const clearMealSelection = () => {
 	return { type: 'CLEAR_MEAL_SELECTION' }
 }
 
+export const toggleMealFetch = (status) => {
+	return {
+		type: status === true ? `TOGGLE_MEAL_FETCH_ON` : `TOGGLE_MEAL_FETCH_OFF`
+	}
+}
+
 export const clientLogIn = () => {
 	return { type: 'CLIENT_LOG_IN' }
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { clearMealSelection } from '../../../modules/actions'
+import { clearMealSelection, toggleMealFetch } from '../../../modules/actions'
 
 import Ingredient from './Ingredient/index'
 import Nutrition from './Nutrition/index'
@@ -13,11 +13,14 @@ import { Container, LeftSection, RightSection } from './style'
 
 const Content = (props) => {
 
-	const { mealData, clearMealSelection } = props
+	const { mealData, clearMealSelection, toggleMealFetch } = props
 
 	if(mealData){
 		useEffect(()=>{
-			return ()=> clearMealSelection()
+			return ()=> {
+				clearMealSelection()
+				toggleMealFetch(false)
+			}
 		}, [])
 		return (
 			<Container>
@@ -56,7 +59,8 @@ const Content = (props) => {
 
 Content.propTypes = {
 	mealData: PropTypes.object,
-	clearMealSelection: PropTypes.func
+	clearMealSelection: PropTypes.func,
+	toggleMealFetch: PropTypes.func
 }
 
-export default connect(null, { clearMealSelection })(Content)
+export default connect(null, { clearMealSelection, toggleMealFetch })(Content)
