@@ -48,7 +48,7 @@ const Content = (props) => {
 				</LeftSection>
 				<RightSection>
 					<Ingredient ingredientData={mealData.ingredients}/>
-					<Recipe recipeData={mealData.recipe}/>
+					<Recipe recipeData={typeof mealData.recipe === 'array' ? mealData.recipe : []}/>
 				</RightSection>
 			</Container>
 		)
