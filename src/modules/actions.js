@@ -9,7 +9,7 @@ export const checkIsCurrentLandingPage = (status) => {
 
 export const selectMeal = (mealName) => async dispatch => {
 	await API
-			.get(`meal/${mealName}`)
+			.get(`meals/${mealName}`)
 			.then(res=>{
 				dispatch({ type: 'SELECT_MEAL', payload: { mealName: mealName, mealData: res.data } })
 			})
