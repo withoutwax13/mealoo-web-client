@@ -10,7 +10,7 @@ const NoAccess = () => {
 					 Mealoo 
 				</span> 
 					through this 
-				<Link to='/landing'> {/* This should go to sign up page [MVP] */}
+				<Link to='/login'>
 					page
 				</Link>
 					.Thank you!

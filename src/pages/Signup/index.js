@@ -15,6 +15,8 @@ import {
 	ErrorItem
 } from './style'
 
+import History from '../../utils/History'
+
 const Signup = () => {
 
 	let [ username, setUsername ] = useState('')
@@ -32,6 +34,7 @@ const Signup = () => {
 		else if (password !== rePassword){ setError(error.concat(['Password fields do not match.'])) }
 		else{
 			setError([])
+			History.push('/login')
 		}
 	}
 

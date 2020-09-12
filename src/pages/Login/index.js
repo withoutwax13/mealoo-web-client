@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
 import {
 	PageContainer,
@@ -15,7 +16,12 @@ import {
 	ErrorItem
 } from './style'
 
-const Login = () => {
+import { clientLogIn } from '../../modules/actions'
+import History from '../../utils/History'
+
+const Login = (props) => {
+
+	const { clientLogIn } = props
 
 	let [ username, setUsername ] = useState('')
 	let [ password, setPassword ] = useState('')
@@ -30,6 +36,8 @@ const Login = () => {
 		if(!(username && password)){ setError(error.concat(["Incomplete field values."])) }
 		else{
 			setError([])
+			clientLogIn()
+			History.push('/set')
 		}
 	}
 
@@ -94,4 +102,4 @@ const Login = () => {
 	)
 }
 
-export default Login
+export default connect(null, { clientLogIn })(Login)
