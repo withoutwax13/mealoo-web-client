@@ -10,6 +10,7 @@ import Profile from '../pages/Profile/index'
 import About from '../pages/About/index'
 import Contact from '../pages/Contact/index'
 import Help from '../pages/Help/index'
+import Login from '../pages/Login/index'
 
 import Integrated from '../components/Integrated/index'
 
@@ -30,6 +31,7 @@ export default () => {
 						<Route exact path='/about' component={About}/>
 						<Route exact path='/help' component={Help}/>
 						<Route exact path='/contact-us' component={Contact}/>
+						<Route exact path='/login' component={Login}/>
 						<Route component={Landing}/>
 					</Switch>
 				</Integrated>
