@@ -22,14 +22,13 @@ export const FormContainer = styled.form`
 	border: 1px solid silver;
 	border-radius: 5px;
 	background-color: white;
-	padding: 10px;
+	padding: 20px;
 	box-shadow: 2px 2px 2px 2px gray;
 `
 
 export const FormItem = styled.div`
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-direction: column;
 	margin: 5px auto;
 `
 
@@ -37,7 +36,7 @@ export const Label = styled.label`
 	font-family: Arial;
 	font-size: 16px;
 	font-weight: bold;
-	margin-right: 10px;
+	margin: 3px auto 3px 0;
 `
 
 export const Input = styled.input`
@@ -46,6 +45,7 @@ export const Input = styled.input`
 	padding: 2px;
 	border: 1px solid silver;
 	border-radius: 5px;
+	margin: 3px 0;
 `
 
 export const ActionContainer = styled.div`
