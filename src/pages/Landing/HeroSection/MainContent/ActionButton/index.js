@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import AuthButton from '../../../../../components/Button/Auth/index'
 
 import { clientLogIn, clientLogOut } from '../../../../../modules/actions'
+import History from '../../../../../utils/History'
 
 import {
 			HeroSectionActionButtonContainer,
@@ -18,7 +19,7 @@ const ActionButton = (props) => {
 	const { isClientHasAuth, clientLogOut, clientLogIn } = props
 
 	const clickCallback = () => {
-		return isClientHasAuth ? clientLogOut : clientLogIn
+		return isClientHasAuth ? clientLogOut : ()=>History.push('/login')
 	}
 
 	return (

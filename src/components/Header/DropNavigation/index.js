@@ -7,6 +7,7 @@ import AuthButton from '../../Button/Auth/index'
 import { NavLink, DropNavigationItemsContainer } from '../styles'
 
 import { clientLogIn, clientLogOut } from '../../../modules/actions'
+import History from '../../../utils/History'
 
 const DropNavigation = (props) => {
 
@@ -21,7 +22,7 @@ const DropNavigation = (props) => {
 				height={30} width={90} 
 				clickCallback={()=>{
 					onPress()
-					isClientHasAuth ? clientLogOut() : clientLogIn()
+					isClientHasAuth ? clientLogOut() : History.push('/login')
 				}}
 				customStyle={`margin-left: 0; align-self: center;`}
 				childrenNode={<h5>{isClientHasAuth ? `LOGOUT` : `JOIN`}</h5>}/>

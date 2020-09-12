@@ -7,6 +7,7 @@ import AuthButton from '../../Button/Auth/index'
 import { NavLink, NavigationItemsContainer } from '../styles'
 
 import { clientLogIn, clientLogOut } from '../../../modules/actions'
+import History from '../../../utils/History'
 
 const Navigation = (props) => {
 
@@ -19,7 +20,7 @@ const Navigation = (props) => {
 			<NavLink to='/contact-us'>Contact</NavLink>
 			<AuthButton 
 				height={30} width={90} 
-				clickCallback={isClientHasAuth ? clientLogOut : clientLogIn}
+				clickCallback={isClientHasAuth ? clientLogOut : ()=>{History.push('/login')}}
 				customStyle={`margin-left: 40px;`}/>
 		</NavigationItemsContainer>
 	)
