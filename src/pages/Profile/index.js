@@ -1,15 +1,13 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from "react";
+import { connect } from "react-redux";
 
-import {
-	PageContainer,
-	SectionContainer
-} from './style'
-import ProfileInfo from './ProfileInfo/index'
-import FoodDiary from './FoodDiary/index'
-import NoAccess from '../NoAccess/index'
+import { PageContainer, SectionContainer } from "./style";
+import ProfileInfo from "./ProfileInfo/index";
+import FoodDiary from "./FoodDiary/index";
+import NoAccess from "../NoAccess/index";
 
-	{/*
+{
+  /*
 		#Expected Prop Data from API call to /users/{username} fetch
 
 		- email: string
@@ -25,9 +23,11 @@ import NoAccess from '../NoAccess/index'
 			- dailyCaloricGoal: integer
 		- username: string
 		- password: string
-	*/}
+	*/
+}
 
-	{/*
+{
+  /*
 		Component Plan:
 
 		# ProfileInfo Component
@@ -42,32 +42,47 @@ import NoAccess from '../NoAccess/index'
 				- content of client/{username}/diaries fetch call
 			render:
 				- props data visualization [like a diary]
-	*/}
+	*/
+}
 
 const Profile = (props) => {
+  const { isClientHasAuth } = props;
+  const dummyProfileData = {
+    id: 1,
+    username: "withoutwax13",
+    email: "johnpatrickyusoresvalera@gmail.com",
+    nutritionSettings: {
+      dailyCaloricGoal: 2400,
+    },
+    mealooUserDetails: {
+      height: 154,
+      weight: 47,
+      age: 21,
+      sex: "Male",
+      physicalActivity: "LOW",
+    },
+  };
 
-	const { isClientHasAuth } = props
-
-	if(isClientHasAuth){
-		return (
-			<PageContainer>
-				<SectionContainer>
-					<ProfileInfo/>
-				</SectionContainer>
-				<SectionContainer>
-					<FoodDiary/>
-				</SectionContainer>
-			</PageContainer>
-		)
-	}else{
-		return <NoAccess/>
-	}
-}
+  if (isClientHasAuth) {
+    return (
+      <PageContainer>
+        <SectionContainer>
+          <ProfileInfo profileData={dummyProfileData} />
+        </SectionContainer>
+        <SectionContainer>
+          <FoodDiary />
+        </SectionContainer>
+      </PageContainer>
+    );
+  } else {
+    return <NoAccess />;
+  }
+};
 
 const mapStateToProps = ({ isClientHasAuth }) => {
-	return {
-		isClientHasAuth
-	}
-}
+  return {
+    isClientHasAuth,
+  };
+};
 
-export default connect(mapStateToProps)(Profile)
+export default connect(mapStateToProps)(Profile);

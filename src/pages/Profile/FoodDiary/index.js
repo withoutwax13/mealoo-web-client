@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Wrapper, SectionWrapper } from "./style";
 import FindDiary from "./FindDiary/index";
 import TotalCalories from "./TotalCalories/index";
-import WeekDiary from "./WeekDiary/index";
+import Diary from "../../../components/Diary/index";
 
 {
   /*
@@ -32,13 +33,56 @@ import WeekDiary from "./WeekDiary/index";
 */
 }
 
+const dummyWeekDiaryData = [
+  {
+    date: "11-11-11",
+    listOfMeals: ["Meal 1", "Meal 2", "Meal 3"],
+    totalCalories: 1234,
+    totalPrice: 1000,
+  },
+  {
+    date: "11-12-11",
+    listOfMeals: ["Meal 1", "Meal 2", "Meal 3"],
+    totalCalories: 1234,
+    totalPrice: 1000,
+  },
+  {
+    date: "11-13-11",
+    listOfMeals: ["Meal 1", "Meal 2", "Meal 3"],
+    totalCalories: 1234,
+    totalPrice: 1000,
+  },
+  {
+    date: "11-14-11",
+    listOfMeals: ["Meal 1", "Meal 2", "Meal 3"],
+    totalCalories: 1234,
+    totalPrice: 1000,
+  },
+  {
+    date: "11-15-11",
+    listOfMeals: ["Meal 1", "Meal 2", "Meal 3"],
+    totalCalories: 1234,
+    totalPrice: 1000,
+  },
+  {
+    date: "11-16-11",
+    listOfMeals: ["Meal 1", "Meal 2", "Meal 3"],
+    totalCalories: 1234,
+    totalPrice: 1000,
+  },
+  {
+    date: "11-17-11",
+    listOfMeals: ["Meal 1", "Meal 2", "Meal 3"],
+    totalCalories: 1234,
+    totalPrice: 1000,
+  },
+];
+
 const FoodDiary = (props) => {
   return (
-    <div>
-      <WeekDiary />
-      <TotalCalories />
-      <FindDiary />
-    </div>
+    <Wrapper>
+      <Diary type="week" data={dummyWeekDiaryData} />
+    </Wrapper>
   );
 };
 

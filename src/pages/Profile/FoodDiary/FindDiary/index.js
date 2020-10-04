@@ -1,5 +1,8 @@
 import React from "react";
 
+import { Wrapper, DatePicker, DiaryWrapper, PickWrapper } from "./style";
+import DayDiary from "../../../../components/Diary/DayDiary/index";
+
 {
   /*
     # Find Diary
@@ -10,7 +13,24 @@ import React from "react";
 }
 
 const FindDiary = () => {
-  return <div>FindDiary Component</div>;
+  const dummyData = {
+    date: "11-17-11",
+    listOfMeals: ["Meal 1", "Meal 2", "Meal 3"],
+    totalCalories: 1234,
+    totalPrice: 1000,
+  };
+
+  return (
+    <Wrapper>
+      <PickWrapper>
+        <h4 style={{ margin: "8px 3px", fontWeight: "bold" }}>FIND: </h4>
+        <DatePicker></DatePicker>
+      </PickWrapper>
+      <DiaryWrapper>
+        <DayDiary data={dummyData} />
+      </DiaryWrapper>
+    </Wrapper>
+  );
 };
 
 export default FindDiary;
