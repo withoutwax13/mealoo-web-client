@@ -1,46 +1,55 @@
-import React from 'react'
-import { connect } from 'react-redux' 
-import PropTypes from 'prop-types'
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import AuthButton from '../../Button/Auth/index'
+import AuthButton from "../../Button/Auth/index";
 
-import { NavLink, DropNavigationItemsContainer } from '../styles'
+import { NavLink, DropNavigationItemsContainer } from "../styles";
 
-import { clientLogIn, clientLogOut } from '../../../modules/actions'
-import History from '../../../utils/History'
+import { clientLogIn, clientLogOut } from "../../../modules/actions";
+import History from "../../../utils/History";
 
 const DropNavigation = (props) => {
+  const { onPress, clientLogOut, clientLogIn, isClientHasAuth } = props;
 
-	const { onPress, clientLogOut, clientLogIn, isClientHasAuth } = props
-
-	return (
-		<DropNavigationItemsContainer>
-			<NavLink to='/help' onClick={onPress}>Help</NavLink>
-			<NavLink to='/about' onClick={onPress}>About</NavLink>
-			<NavLink to='/contact-us' onClick={onPress}>Contact</NavLink>
-			<AuthButton 
-				height={30} width={90} 
-				clickCallback={()=>{
-					onPress()
-					isClientHasAuth ? clientLogOut() : History.push('/login')
-				}}
-				customStyle={`margin-left: 0; align-self: center;`}
-				childrenNode={<h5>{isClientHasAuth ? `LOGOUT` : `JOIN`}</h5>}/>
-		</DropNavigationItemsContainer>
-	)
-}
+  return (
+    <DropNavigationItemsContainer>
+      <NavLink to="/help" onClick={onPress}>
+        Help
+      </NavLink>
+      <NavLink to="/about" onClick={onPress}>
+        About
+      </NavLink>
+      <NavLink to="/contact-us" onClick={onPress}>
+        Contact
+      </NavLink>
+      <AuthButton
+        height={30}
+        width={90}
+        clickCallback={() => {
+          onPress();
+          isClientHasAuth ? clientLogOut() : History.push("/signup");
+        }}
+        customStyle={`margin-left: 0; align-self: center;`}
+        childrenNode={<h5>{isClientHasAuth ? `LOGOUT` : `JOIN`}</h5>}
+      />
+    </DropNavigationItemsContainer>
+  );
+};
 
 DropNavigation.propTypes = {
-	onPress: PropTypes.func.isRequired,
-	isClientHasAuth: PropTypes.bool,
-	clientLogIn: PropTypes.func.isRequired,
-	clientLogOut: PropTypes.func.isRequired
-}
+  onPress: PropTypes.func.isRequired,
+  isClientHasAuth: PropTypes.bool,
+  clientLogIn: PropTypes.func.isRequired,
+  clientLogOut: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = ({ isClientHasAuth }) => {
-	return {
-		isClientHasAuth
-	}
-}
+  return {
+    isClientHasAuth,
+  };
+};
 
-export default connect(mapStateToProps, { clientLogIn, clientLogOut })(DropNavigation)
+export default connect(mapStateToProps, { clientLogIn, clientLogOut })(
+  DropNavigation
+);
